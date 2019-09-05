@@ -1,41 +1,38 @@
-<p id="notice"><%= notice %></p>
+
+<div class = "container">
+
+		<div class = "row">
+			<h1 id="title">Little Bay</h1>
+		</div>
+
+		<div class = "row">
+			<p id="notice"><%= notice %></p>
+		</div>
+
+		<div class = "row">
+
+							<% @recipes.each do |recipe| %>
+										<div class = "col-4">
+											<div class="card">
+									  		<img src= <%= recipe.visuals %> class='card-img-top' alt="...">
+									  		<div class="card-body">
+										    	<h5 class="card-title"> <%= recipe.name %> </h5>
+										    	<p class="card-text"> <%= recipe.instructions %></p>
+
+										    	<%= link_to 'Show', recipe %>
+										    	<%= link_to 'Edit', edit_recipe_path(recipe) %>
+										    	<%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+										    	<%= link_to 'New Recipe', new_recipe_path %>
+									    	</div>
+									    </div>
+									  </div>
+					    <% end %>
+
+			</div>
+
+</div>
 
 
+		<%= stylesheet_pack_tag 'recipe' %>
 
-<h1>Little Hunny</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Ingredient</th>
-      <th>Instructions</th>
-      <th>Preptime</th>
-      <th>Serving size</th>
-      <th>Agerange</th>
-      <th>Visuals</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.name %></td>
-        <td><%= recipe.ingredient %></td>
-        <td><%= recipe.instructions %></td>
-        <td><%= recipe.preptime %></td>
-        <td><%= recipe.serving_size %></td>
-        <td><%= recipe.agerange %></td>
-        <td><%= recipe.visuals %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Recipe', new_recipe_path %>
+</div>
