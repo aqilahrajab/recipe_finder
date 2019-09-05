@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<h1>Little Hunny</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ingredient</th>
+      <th>Instructions</th>
+      <th>Preptime</th>
+      <th>Serving size</th>
+      <th>Agerange</th>
+      <th>Visuals</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.name %></td>
+        <td><%= recipe.ingredient %></td>
+        <td><%= recipe.instructions %></td>
+        <td><%= recipe.preptime %></td>
+        <td><%= recipe.serving_size %></td>
+        <td><%= recipe.agerange %></td>
+        <td><%= recipe.visuals %></td>
+        <td><%= link_to 'Show', recipe %></td>
+        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recipe', new_recipe_path %>
