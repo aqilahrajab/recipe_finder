@@ -1,3 +1,104 @@
+
+
+.body {
+	text-align: center;
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 0px;
+	margin-right: auto;
+	margin-left: 0px;
+}
+
+#showlayout{
+	background-image: url(/showlayout.png);
+  background-repeat: repeat;
+  background-size: 100%;
+
+}
+
+#logo {
+	display: inline-block;
+}
+
+#filterbox{
+	margin-bottom: 40px;
+}
+
+
+.col-3 {
+	background-color: #f8f9fa;
+	font-color: white;
+	padding: 50px;
+}
+
+#inputfield{
+	border-style: outset;
+  border-color: coral;
+  border-width: 7px;
+}
+
+#searchbutton{
+	margin-top: 10px;
+}
+
+
+hr {
+    display: block;
+    height: 3px;
+    WIDTH: 100%;
+    border: 3px;
+    border-top: 3px solid #ccc;
+    margin: 3em 0;
+    padding: 0;
+}
+
+.btn btn-dark {
+	width: 100px;
+	padding: 2px;
+}
+
+#grains{
+	padding: 2px;
+}
+
+#proteins{
+
+}
+
+#vegetables{
+	margin-top: 20px;
+	padding: 2px;
+}
+
+#agerange1 {
+	font-size: 15px;
+	padding-left: 40px;
+	padding-right:40px;
+}
+
+#agerange2 {
+	font-size: 15px;
+	padding-left: 27px;
+	padding-right:27px;
+}
+
+#agerange3 {
+	font-size: 15px;
+	padding-left: 33px;
+	padding-right:33px;
+}
+
+
+
+#title {
+	display: inline-block;
+}
+
+.card {
+	display: flex;
+}
+
+
 #title{
-	color: red;
+	color: pink;
 }

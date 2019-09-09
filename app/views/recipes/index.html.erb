@@ -1,35 +1,145 @@
 
-<div class = "container">
+
+<div class = "body">
+
 
 		<div class = "row">
-			<h1 id="title">Little Bay</h1>
+
+				<div class="col-3">
+
+					<div id  = "filterbox">
+							<p> Find by <strong>recipe name:</strong></p>
+
+							<div>
+										<%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+									  <%= text_field_tag :search, params[:search], placeholder: "Search for Recipes" %> <br/>
+									  <%= submit_tag "Search", :name => nil %>
+									  <% end %>
+							</div>
+
+					</div>
+
+
+					<div id  = "filterbox">
+								<p> Find by <strong>ingredients:</strong></p>
+
+								<p id="vegetables">
+									  <a class="btn btn-light" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
+									    <img src= "vegetable_logo.png" style = "width: 30px"/>
+									    VEGETABLES
+									  </a>
+								</p>
+
+								<div class="collapse" id="collapseExample1">
+										  <div class="card card-body">
+										  		<%= check_box_tag(:recipe) %>
+													<%= label_tag(:recipe, "Brocolli") %>
+													<%= check_box_tag(:recipe) %>
+								          <%= label_tag(:recipe, "Spinach") %>
+								          <%= check_box_tag(:recipe) %>
+								          <%= label_tag(:recipe, "Tomatoes") %>
+								          <%= check_box_tag(:recipe) %>
+								          <%= label_tag(:recipe, "Carrots") %>
+
+										  </div>
+								</div>
+
+								<hr/>
+
+								<p id="grains">
+									  <a class="btn btn-light" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+									    <img src= "grain_logo.png" style = "width: 30px"/>
+									    GRAINS
+									  </a>
+								</p>
+
+								<div class="collapse" id="collapseExample2">
+										  <div class="card card-body">
+										    	<%= check_box_tag(:recipe) %>
+													<%= label_tag(:recipe, "Rice") %>
+													<%= check_box_tag(:recipe) %>
+								          <%= label_tag(:recipe, "Barley") %>
+								          <%= check_box_tag(:recipe) %>
+								          <%= label_tag(:recipe, "Quinoa") %>
+								          <%= check_box_tag(:recipe) %>
+								          <%= label_tag(:recipe, "Couscous") %>
+										  </div>
+								</div>
+
+								<hr/>
+
+								<p id="proteins">
+									  <a class="btn btn-light" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+									  	<img src= "protein_logo.png" style = "width: 30px"/>
+									    PROTEINS
+									  </a>
+								</p>
+
+								<div class="collapse" id="collapseExample3">
+										  <div class="card card-body">
+										    	<%= check_box_tag(:recipe) %>
+													<%= label_tag(:recipe, "Fish") %>
+													<%= check_box_tag(:recipe) %>
+								          <%= label_tag(:recipe, "Chicken") %>
+								          <%= check_box_tag(:recipe) %>
+								          <%= label_tag(:recipe, "Beef") %>
+								          <%= check_box_tag(:recipe) %>
+								          <%= label_tag(:recipe, "Prawn") %>
+										  </div>
+								</div>
+					</div>
+
+					<hr/>
+
+					<div id  = "filterbox">
+
+							<p> Find by <strong>Age Range:</strong></p>
+
+									<div class="panel-body">
+											<button class="btn btn-info btn-pressure btn-sensitive" id="agerange1">less than 9 months</button><br/>
+			                <button class="btn btn-success" id="agerange2">9 months to 12 months</button><br/>
+			                <button class="btn btn-warning" id="agerange3">12 months and above</button>
+			      		</div>
+			   </div>
+
+				</div>
+
+				<div class="col-9">
+
+					<div class ="row" id="logo">
+							<img src= "logo.png" style = "width: 200px"/>
+							<p id="notice"><%= notice %></p>
+							<% if @recipe.blank? %>
+  							<h4>There are no recipes containing the term <%= params[:search] %>.</h4>
+							<% end %>
+					</div>
+
+										<div class = "row">
+
+												<div class = "col-4">
+													<% @recipe.each do |recipe| %>
+													<div class="card-group">
+														<div class="card-group" style="width: 18rem;">
+												  		<img src= <%= recipe.visual %> class='card-img-top' alt="...">
+												  		<div class="card-body">
+													    	<h5 class="card-title"> <%= recipe.name %> </h5>
+
+													    	<%= link_to 'Show', recipe %>
+													    	<%= link_to 'Edit', edit_recipe_path(recipe) %>
+													    	<%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+													    	<%= link_to 'New Recipe', new_recipe_path %>
+												    	</div>
+												    </div>
+												   </div>
+												  <% end %>
+											  </div>
+
+										</div>
+
+				</div>
+
+
 		</div>
-
-		<div class = "row">
-			<p id="notice"><%= notice %></p>
-		</div>
-
-		<div class = "row">
-
-							<% @recipes.each do |recipe| %>
-										<div class = "col-4">
-											<div class="card">
-									  		<img src= <%= recipe.visuals %> class='card-img-top' alt="...">
-									  		<div class="card-body">
-										    	<h5 class="card-title"> <%= recipe.name %> </h5>
-										    	<p class="card-text"> <%= recipe.instructions %></p>
-
-										    	<%= link_to 'Show', recipe %>
-										    	<%= link_to 'Edit', edit_recipe_path(recipe) %>
-										    	<%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
-										    	<%= link_to 'New Recipe', new_recipe_path %>
-									    	</div>
-									    </div>
-									  </div>
-					    <% end %>
-
-			</div>
-
 </div>
 
 

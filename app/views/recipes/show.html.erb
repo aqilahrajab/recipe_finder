@@ -1,39 +1,50 @@
-<p id="notice"><%= notice %></p>
+<body id = "showlayout">
 
-<p>
-  <strong>Name:</strong>
-  <%= @recipe.name %>
-</p>
+			<div class = "container">
 
-<p>
-  <strong>Ingredient:</strong>
-  <%= @recipe.ingredient %>
-</p>
+					<div class = "row">
 
-<p>
-  <strong>Instructions:</strong>
-  <%= @recipe.instructions %>
-</p>
+						<div class="card mb-3">
+						  <img src= <%= @recipe.visual %>, class="card-img-top" alt="recipe-image">
 
-<p>
-  <strong>Preptime:</strong>
-  <%= @recipe.preptime %>
-</p>
+							  <div class="card-body">
+								  	<p id="notice", style ="display: inline-block;">
+								  		<%= notice %>
+								  	</p>
 
-<p>
-  <strong>Serving size:</strong>
-  <%= @recipe.serving_size %>
-</p>
+								  	<div class = "row">
+							    			<h5 class="card-title"><%= @recipe.name %></h5>
+							    	</div>
 
-<p>
-  <strong>Agerange:</strong>
-  <%= @recipe.agerange %>
-</p>
 
-<p>
-  <strong>Visuals:</strong>
-  <%= @recipe.visuals %>
-</p>
+							    	<div class = "row">
+							    		<div class="col-6">
+								    			<p>
+										  			<strong>Ingredient:</strong>
+										  			<%= @recipe.ingredient %>
+													</p>
+							    		</div>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+							    		<div class="col-6">
+								    			<p>
+										  			<strong>Instructions:</strong>
+										  			<%= @recipe.instruction %>
+													</p>
+							    		</div>
+							    	</div>
+
+							    		<div class = "row">
+							    			<%= @recipe.preptime %> | <%= @recipe.serving_size %> | <%= @recipe.agerange %>
+							    		</div>
+
+							    		<div class = "row">
+											    <p class="card-text">
+											    	<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+														<%= link_to 'Back', recipes_path %>
+										   		</p>
+										  </div>
+
+
+				</div>
+		</div>
+</body>
