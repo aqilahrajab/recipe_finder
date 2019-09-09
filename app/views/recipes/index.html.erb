@@ -32,14 +32,11 @@
 
 								<div class="collapse" id="collapseExample1">
 										  <div class="card card-body">
-										  		<%= check_box_tag(:recipe) %>
-													<%= label_tag(:recipe, "Brocolli") %>
-													<%= check_box_tag(:recipe) %>
-								          <%= label_tag(:recipe, "Spinach") %>
-								          <%= check_box_tag(:recipe) %>
-								          <%= label_tag(:recipe, "Tomatoes") %>
-								          <%= check_box_tag(:recipe) %>
-								          <%= label_tag(:recipe, "Carrots") %>
+
+										  	<%= link_to "Brocolli", recipes_path(:search =>"Brocolli") %>
+												<%= link_to "Spinach", recipes_path(:search =>"Spinach") %>
+												<%= link_to "Tomatoes", recipes_path(:search =>"Tomatoes") %>
+												<%= link_to "Carrots", recipes_path(:search =>"Carrots") %>
 
 										  </div>
 								</div>
@@ -55,14 +52,12 @@
 
 								<div class="collapse" id="collapseExample2">
 										  <div class="card card-body">
-										    	<%= check_box_tag(:recipe) %>
-													<%= label_tag(:recipe, "Rice") %>
-													<%= check_box_tag(:recipe) %>
-								          <%= label_tag(:recipe, "Barley") %>
-								          <%= check_box_tag(:recipe) %>
-								          <%= label_tag(:recipe, "Quinoa") %>
-								          <%= check_box_tag(:recipe) %>
-								          <%= label_tag(:recipe, "Couscous") %>
+
+										  	<%= link_to "Rice", recipes_path(:search =>"Rice") %>
+												<%= link_to "Barley", recipes_path(:search =>"Barley") %>
+ 												<%= link_to "Quinoa", recipes_path(:search =>"Quinoa") %>
+												<%= link_to "Couscous", recipes_path(:search =>"Couscous") %>
+
 										  </div>
 								</div>
 
@@ -76,18 +71,15 @@
 								</p>
 
 								<div class="collapse" id="collapseExample3">
-										  <div class="card card-body">
-										    	<%= check_box_tag(:recipe) %>
-													<%= label_tag(:recipe, "Fish") %>
-													<%= check_box_tag(:recipe) %>
-								          <%= label_tag(:recipe, "Chicken") %>
-								          <%= check_box_tag(:recipe) %>
-								          <%= label_tag(:recipe, "Beef") %>
-								          <%= check_box_tag(:recipe) %>
-								          <%= label_tag(:recipe, "Prawn") %>
-										  </div>
-								</div>
-					</div>
+                	<div class="card card-body">
+                		<%= link_to "Fish", recipes_path(:search =>"Fish") %>
+										<%= link_to "Chicken", recipes_path(:search =>"Chicken") %>
+										<%= link_to "Beef", recipes_path(:search =>"Beef") %>
+										<%= link_to "Prawn", recipes_path(:search =>"Prawn") %>
+                   </div>
+               </div>
+         </div>
+
 
 					<hr/>
 
@@ -109,9 +101,7 @@
 					<div class ="row" id="logo">
 							<img src= "logo.png" style = "width: 200px"/>
 							<p id="notice"><%= notice %></p>
-							<% if @recipe.blank? %>
-  							<h4>There are no recipes containing the term <%= params[:search] %>.</h4>
-							<% end %>
+
 					</div>
 
 										<div class = "row">

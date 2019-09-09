@@ -11,9 +11,14 @@ class RecipesController < ApplicationController
         @recipe = Recipe.all.order("created_at DESC")
       end
 
-    @agerange = Agerange.all
+    # @recipe = if params[:ingredient].present?
+    #     Recipe.where(' ? = ANY (level)', params[:ingredient])
+    #   else
+    #     Recipe.all
+    #   end
 
   end
+
 
   # GET /recipes/1
   # GET /recipes/1.json

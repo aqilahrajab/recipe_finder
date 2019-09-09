@@ -86,3 +86,94 @@ Recipe.create(
                 <%= submit_tag 'Search', name: nil %>
                 <% end %>
         <p>
+
+
+
+                    <div id  = "filterbox">
+                                <p> Find by <strong>ingredients:</strong></p>
+
+                                <p id="vegetables">
+                                      <a class="btn btn-light" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
+                                        <img src= "vegetable_logo.png" style = "width: 30px"/>
+                                        VEGETABLES
+                                      </a>
+                                </p>
+
+                                <div class="collapse" id="collapseExample1">
+                                          <div class="card card-body">
+                                                <%= check_box_tag(:recipe) %>
+                                                    <%= label_tag(:recipe, "Brocolli") %>
+                                                    <%= check_box_tag(:recipe) %>
+                                          <%= label_tag(:recipe, "Spinach") %>
+                                          <%= check_box_tag(:recipe) %>
+                                          <%= label_tag(:recipe, "Tomatoes") %>
+                                          <%= check_box_tag(:recipe) %>
+                                          <%= label_tag(:recipe, "Carrots") %>
+
+                                          </div>
+                                </div>
+
+                                <hr/>
+
+                                <p id="grains">
+                                      <a class="btn btn-light" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                                        <img src= "grain_logo.png" style = "width: 30px"/>
+                                        GRAINS
+                                      </a>
+                                </p>
+
+                                <div class="collapse" id="collapseExample2">
+                                          <div class="card card-body">
+                                                <%= check_box_tag(:recipe) %>
+                                                    <%= label_tag(:recipe, "Rice") %>
+                                                    <%= check_box_tag(:recipe) %>
+                                          <%= label_tag(:recipe, "Barley") %>
+                                          <%= check_box_tag(:recipe) %>
+                                          <%= label_tag(:recipe, "Quinoa") %>
+                                          <%= check_box_tag(:recipe) %>
+                                          <%= label_tag(:recipe, "Couscous") %>
+                                          </div>
+                                </div>
+
+                                <hr/>
+
+                                <p id="proteins">
+                                      <a class="btn btn-light" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+                                        <img src= "protein_logo.png" style = "width: 30px"/>
+                                        PROTEINS
+                                      </a>
+                                </p>
+
+                                <div class="collapse" id="collapseExample3">
+                                          <div class="card card-body">
+                                                <%= check_box_tag(:recipe) %>
+                                                    <%= label_tag(:recipe, "Fish") %>
+                                                    <%= check_box_tag(:recipe) %>
+<%= label_tag(:recipe, "Chicken") %>
+<%= check_box_tag(:recipe) %>
+<%= label_tag(:recipe, "Beef") %>
+<%= check_box_tag(:recipe) %>
+<%= label_tag(:recipe, "Prawn") %>
+                                          </div>
+                                </div>
+                    </div>
+
+
+
+
+<%= link_to "Fish", recipes_path(:search =>"Fish") %>
+<%= link_to "Chicken", recipes_path(:search =>"Chicken") %>
+<%= link_to "Beef", recipes_path(:search =>"Beef") %>
+<%= link_to "Prawn", recipes_path(:search =>"Prawn") %>
+
+
+<%= link_to "Brocolli", recipes_path(:search =>"Brocolli") %>
+<%= link_to "Spinach", recipes_path(:search =>"Spinach") %>
+<%= link_to "Tomatoes", recipes_path(:search =>"Tomatoes") %>
+<%= link_to "Carrots", recipes_path(:search =>"Carrots") %>
+
+
+<%= link_to "Rice", recipes_path(:search =>"Rice") %>
+<%= link_to "Barley", recipes_path(:search =>"Barley") %>
+ <%= link_to "Quinoa", recipes_path(:search =>"Quinoa") %>
+<%= link_to "Couscous", recipes_path(:search =>"Couscous") %>
