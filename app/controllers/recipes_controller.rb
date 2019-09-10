@@ -11,28 +11,36 @@ class RecipesController < ApplicationController
         @recipe = Recipe.all.order("created_at DESC")
       end
 
-    # @recipe = if params[:ingredient].present?
-    #     Recipe.where(' ? = ANY (level)', params[:ingredient])
-    #   else
-    #     Recipe.all
-    #   end
-
+    @recipe = Recipe.all
+      if params[:linksearch]
+        @recipe = Recipe.search(params[:linksearch]).order("created_at DESC")
+      else
+        @recipe = Recipe.all.order("created_at DESC")
+      end
+    # @age = Recipe.find(params[:recipe_id]).agerange_id
   end
 
 
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+     recipenum = Recipe.find(params[:id]).agerange_id
+     @age= Agerange.find(agerange_id = recipenum)
+
   end
 
   # GET /recipes/new
   def new
     @recipe = Recipe.new
-
+    @agerange = Agerange.all
   end
 
   # GET /recipes/1/edit
   def edit
+
+    recipenum = Recipe.find(params[:id]).agerange_id
+    @age= Agerange.find(agerange_id = recipenum)
+    @agerange = Agerange.all
   end
 
   # POST /recipes

@@ -10,12 +10,6 @@
 
 }
 
-#showlayout{
-	background-image: url(/showlayout.png);
-  background-repeat: repeat;
-  background-size: 100%;
-
-}
 
 #logo {
 	display: inline-block;
@@ -30,6 +24,10 @@
 	background-color: #f8f9fa;
 	font-color: white;
 	padding: 50px;
+}
+
+#newrecipe {
+	margin-bottom: 20px;
 }
 
 #inputfield{
@@ -89,10 +87,12 @@ hr {
 	padding-right:33px;
 }
 
-
-
 #title {
 	display: inline-block;
+}
+
+.col-9 {
+	wrap: row;
 }
 
 .card {
@@ -102,4 +102,71 @@ hr {
 
 #title{
 	color: pink;
+}
+
+.recipe .card-img {
+	background-size: cover;
+	background-postion: center;
+	width: 100%;
+}
+.recipe .card-img:after {
+	content:"";
+		display:block;
+		width: 100%;
+
+}
+.recipe .card-img:after {}
+
+.col-4 {
+ margin-bottom: 40px
+}
+
+//show.html.erb
+
+#showlayout{
+	background-image: url(/showlayout.png);
+  background-repeat: repeat;
+  background-size: 100%;
+  text-align: center;
+}
+
+
+#showcardtitle{
+	text-align: center;
+}
+
+#showcard {
+	display: inline-block
+}
+
+//edit.html.erb
+
+.editcontent {
+	text-align: center;
+	margin-top: 70px;
+	background-color: #fcf9e7;
+	padding: 40px;
+
+}
+
+#editlayout {
+	background-image: url(/editlayout.png);
+  background-repeat: repeat;
+  background-size: 100%;
+}
+
+//new.html.erb
+
+.newcontent {
+	text-align: center;
+	margin-top: 70px;
+	background-color: #fdfbf0;
+	padding: 40px;
+
+}
+
+#newlayout {
+	background-image: url(/newlayout.png);
+  background-repeat: repeat;
+  background-size: 100%;
 }

@@ -5,7 +5,6 @@
 					<div class = "row">
 
 						<div class="card mb-3">
-						  <img src= <%= @recipe.visual %>, class="card-img-top" alt="recipe-image">
 
 							  <div class="card-body">
 								  	<p id="notice", style ="display: inline-block;">
@@ -13,28 +12,36 @@
 								  	</p>
 
 								  	<div class = "row">
-							    			<h5 class="card-title"><%= @recipe.name %></h5>
+							    			<h5 class="card-title" id= "showcardtitle"><%= @recipe.name %></h5>
 							    	</div>
 
 
 							    	<div class = "row">
-							    		<div class="col-6">
+							    		<div class="col-6" id="showcard">
+
+								    			<img src="<%= @recipe.visual %>" class="card-img-top" alt="recipe-image" style = "width: 300px">
+
 								    			<p>
 										  			<strong>Ingredient:</strong>
 										  			<%= @recipe.ingredient %>
 													</p>
-							    		</div>
 
-							    		<div class="col-6">
-								    			<p>
+													<p>
 										  			<strong>Instructions:</strong>
 										  			<%= @recipe.instruction %>
 													</p>
+
+							    		</div>
+
+							    		<div class="col-6">
+
+							    			<h1> comment box here </h1>
+
 							    		</div>
 							    	</div>
 
 							    		<div class = "row">
-							    			<%= @recipe.preptime %> | <%= @recipe.serving_size %> | <%= @recipe.agerange %>
+							    			<%= @recipe.preptime %> | <%= @recipe.serving_size %> | <%= @age.agerange %>
 							    		</div>
 
 							    		<div class = "row">

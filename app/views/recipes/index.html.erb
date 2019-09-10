@@ -7,6 +7,12 @@
 
 				<div class="col-3">
 
+					<button type="button" class="btn btn-warning" id= "newrecipe">
+						<%= link_to 'New Recipe', new_recipe_path %>
+					</button>
+
+
+
 					<div id  = "filterbox">
 							<p> Find by <strong>recipe name:</strong></p>
 
@@ -33,10 +39,10 @@
 								<div class="collapse" id="collapseExample1">
 										  <div class="card card-body">
 
-										  	<%= link_to "Brocolli", recipes_path(:search =>"Brocolli") %>
-												<%= link_to "Spinach", recipes_path(:search =>"Spinach") %>
-												<%= link_to "Tomatoes", recipes_path(:search =>"Tomatoes") %>
-												<%= link_to "Carrots", recipes_path(:search =>"Carrots") %>
+										  	<%= link_to "Brocolli", recipes_path(:linksearch =>"Brocolli") %>
+												<%= link_to "Spinach", recipes_path(:linksearch =>"Spinach") %>
+												<%= link_to "Tomatoes", recipes_path(:linksearch =>"Tomatoes") %>
+												<%= link_to "Carrots", recipes_path(:linksearch =>"Carrots") %>
 
 										  </div>
 								</div>
@@ -88,9 +94,19 @@
 							<p> Find by <strong>Age Range:</strong></p>
 
 									<div class="panel-body">
-											<button class="btn btn-info btn-pressure btn-sensitive" id="agerange1">less than 9 months</button><br/>
-			                <button class="btn btn-success" id="agerange2">9 months to 12 months</button><br/>
-			                <button class="btn btn-warning" id="agerange3">12 months and above</button>
+
+											<button class="btn btn-info btn-pressure btn-sensitive" id="agerange1">
+												<%= link_to "less than 9 months", recipes_path(:search => "less than 9 months") %>
+											</button><br/>
+
+			                <button class="btn btn-success" id="agerange2">
+			                	<%= link_to "9 months to 12 months", recipes_path(:search => "9 months to 12 months") %>
+			              	</button><br/>
+
+
+			                <button class="btn btn-warning" id="agerange3">
+			                	<%= link_to "12 months and above", recipes_path(:search => "12 months and above") %>
+			              	</button>
 			      		</div>
 			   </div>
 
@@ -104,26 +120,24 @@
 
 					</div>
 
-										<div class = "row">
+										<div class = "row recipes">
+											<% @recipe.each do |recipe| %>
+												<div class = "col-4 recipe">
+											  	<div class="card">
+											  		<div class="card-img">
+											  			<img src= <%= recipe.visual %> class='card-img-top' alt="...">
+											  		</div>
+											  		<div class="card-body">
 
-												<div class = "col-4">
-													<% @recipe.each do |recipe| %>
-													<div class="card-group">
-														<div class="card-group" style="width: 18rem;">
-												  		<img src= <%= recipe.visual %> class='card-img-top' alt="...">
-												  		<div class="card-body">
-													    	<h5 class="card-title"> <%= recipe.name %> </h5>
-
-													    	<%= link_to 'Show', recipe %>
-													    	<%= link_to 'Edit', edit_recipe_path(recipe) %>
-													    	<%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
-													    	<%= link_to 'New Recipe', new_recipe_path %>
-												    	</div>
+												    	<h5 class="card-title"> <%= recipe.name %> </h5>
+												    	<h5> <%= recipe.agerange.agerange %> </h5>
+												    	<%= link_to 'Show', recipe %>
+												    	<%= link_to 'Edit', edit_recipe_path(recipe) %>
+												    	<%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
 												    </div>
-												   </div>
-												  <% end %>
-											  </div>
-
+												  </div>
+										  	</div>
+											<% end %>
 										</div>
 
 				</div>

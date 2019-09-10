@@ -101,8 +101,8 @@ Recipe.create(
 
                                 <div class="collapse" id="collapseExample1">
                                           <div class="card card-body">
-                                                <%= check_box_tag(:recipe) %>
-                                                    <%= label_tag(:recipe, "Brocolli") %>
+                                         <%= check_box_tag(:recipe) %>
+                                            <%= label_tag(:recipe, "Brocolli") %>
                                                     <%= check_box_tag(:recipe) %>
                                           <%= label_tag(:recipe, "Spinach") %>
                                           <%= check_box_tag(:recipe) %>
@@ -137,23 +137,23 @@ Recipe.create(
 
                                 <hr/>
 
-                                <p id="proteins">
-                                      <a class="btn btn-light" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
-                                        <img src= "protein_logo.png" style = "width: 30px"/>
+        <p id="proteins">
+        <a class="btn btn-light" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+            <img src= "protein_logo.png" style = "width: 30px"/>
                                         PROTEINS
-                                      </a>
-                                </p>
+            </a>
+            </p>
 
-                                <div class="collapse" id="collapseExample3">
-                                          <div class="card card-body">
-                                                <%= check_box_tag(:recipe) %>
-                                                    <%= label_tag(:recipe, "Fish") %>
-                                                    <%= check_box_tag(:recipe) %>
-<%= label_tag(:recipe, "Chicken") %>
-<%= check_box_tag(:recipe) %>
-<%= label_tag(:recipe, "Beef") %>
-<%= check_box_tag(:recipe) %>
-<%= label_tag(:recipe, "Prawn") %>
+            <div class="collapse" id="collapseExample3">
+                <div class="card card-body">
+                <%= check_box_tag(:recipe) %>
+                <%= label_tag(:recipe, "Fish") %>
+                <%= check_box_tag(:recipe) %>
+                <%= label_tag(:recipe, "Chicken") %>
+                <%= check_box_tag(:recipe) %>
+                <%= label_tag(:recipe, "Beef") %>
+                <%= check_box_tag(:recipe) %>
+                <%= label_tag(:recipe, "Prawn") %>
                                           </div>
                                 </div>
                     </div>
@@ -177,3 +177,19 @@ Recipe.create(
 <%= link_to "Barley", recipes_path(:search =>"Barley") %>
  <%= link_to "Quinoa", recipes_path(:search =>"Quinoa") %>
 <%= link_to "Couscous", recipes_path(:search =>"Couscous") %>
+
+
+    <%= form.label :agerange %>
+    <%= form.text_field :agerange, value: @age.agerange
+
+
+    <div class="field">
+
+        <%= form.label :agerange_id %>
+                <%= radio_button_tag(:agerange_id, value: 1 ) %>
+                <%= label_tag(:agrerange, "Less than 9 months") %>
+                <%= radio_button_tag(:agerange_id, value: 2) %>
+                <%= label_tag(:agerange, "9 months to 12 months") %>
+                <%= radio_button_tag(:agerange_id, value: 3) %>
+                <%= label_tag(:agerange, "12 months and above") %>
+  </div>
