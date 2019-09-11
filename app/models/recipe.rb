@@ -6,4 +6,6 @@ class Recipe < ApplicationRecord
       where("name ILIKE ? OR ingredient ILIKE ?", "%#{search}%", "%#{search}%")
   end
 
+  has_many :comments
+
 end

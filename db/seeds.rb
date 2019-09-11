@@ -8,15 +8,15 @@ Agerange.create( :agerange => '12 months and above')
 Recipe.create(
   :name => 'Air Fry Snapper',
   :ingredient =>'
-  1 Snapper Fish<br/>
-  Tomatoes<br/>
-  Cucumber<br/>
-  Salt and pepper<br/>
-  Olive Oil<br/>',
+  1 Snapper Fish,
+  2 Tomatoes,
+  Cucumber,
+  Salt and pepper,
+  Olive Oil',
   :instruction => '
-  1. Bring 1 cup of water to a boil in a small pot, add carrots, apricots, minced chicken and Chicken #AnyaMealsStock.<br/>
-  2. Stir well and simmer for 30 minutes. <br/>
-  3. Wash quinoa grains, drain and combine with 2.5 cups of water.<br/>',
+  1. Bring 1 cup of water to a boil in a small pot, add carrots, apricots, minced chicken and Chicken #AnyaMealsStock.
+  2. Stir well and simmer for 30 minutes.
+  3. Wash quinoa grains, drain and combine with 2.5 cups of water.',
   :preptime => '30 minutes',
   :serving_size => '1-2 meals',
   :agerange_id => 2,
@@ -94,7 +94,7 @@ Recipe.create(
 Recipe.create(
   :name => 'Fish Porridge',
   :ingredient =>'
-  1 cup Brown Rice<br/>
+  1 cup Brown Rice
   1 cup Frozen Vegetables<br/>
   1 cup Fish Stock<br/>',
   :instruction => '

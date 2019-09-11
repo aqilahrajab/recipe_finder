@@ -4,6 +4,7 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
+
     @recipe = Recipe.all
       if params[:search]
         @recipe = Recipe.search(params[:search]).order("created_at DESC")
@@ -11,13 +12,18 @@ class RecipesController < ApplicationController
         @recipe = Recipe.all.order("created_at DESC")
       end
 
-    @recipe = Recipe.all
-      if params[:linksearch]
-        @recipe = Recipe.search(params[:linksearch]).order("created_at DESC")
-      else
-        @recipe = Recipe.all.order("created_at DESC")
+      @age = Agerange.all
+      if params[:searchage]
+        p "------------"
+        p params[:searchage]
+        @age = Agerange.where({agerange: params[:searchage]})
+
+         ageId = @age[0].id
+         @recipe = Recipe.where({agerange_id: ageId})
+
+         p @recipe
       end
-    # @age = Recipe.find(params[:recipe_id]).agerange_id
+
   end
 
 
@@ -26,6 +32,14 @@ class RecipesController < ApplicationController
   def show
      recipenum = Recipe.find(params[:id]).agerange_id
      @age= Agerange.find(agerange_id = recipenum)
+
+      recipeNumIng = Recipe.find(params[:id]).ingredient
+      @ingredient = recipeNumIng.split(",");
+
+      recipeNumIns = Recipe.find(params[:id]).instruction
+      @instruction = recipeNumIns.split(".");
+
+
 
   end
 
@@ -58,6 +72,8 @@ class RecipesController < ApplicationController
       end
     end
   end
+
+
 
   # PATCH/PUT /recipes/1
   # PATCH/PUT /recipes/1.json

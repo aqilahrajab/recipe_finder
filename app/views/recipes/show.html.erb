@@ -23,12 +23,17 @@
 
 								    			<p>
 										  			<strong>Ingredient:</strong>
-										  			<%= @recipe.ingredient %>
+										  			<% @ingredient.each do |item|%>
+										  			<div> <%= item %> </div>
+										  			<% end %>
+
 													</p>
 
 													<p>
 										  			<strong>Instructions:</strong>
-										  			<%= @recipe.instruction %>
+										  			<% @instruction.each do |item|%>
+										  			<div> <%= item %> </div>
+										  			<% end %>
 													</p>
 
 							    		</div>
