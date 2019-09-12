@@ -1,0 +1,32 @@
+
+<body id = "forumbackground">
+
+	<button type="button" class="btn btn-outline-secondary" style = "margin-top: 40px;">
+				<%= link_to 'Edit', edit_forum_path(@forums) %>
+			</button>
+
+			<button type="button" class="btn btn-outline-secondary" style = "margin-top: 40px;">
+				<%= link_to 'Back', forums_path %>
+			</button>
+
+
+		<div class = "row">
+
+			<div class = "col-2">
+			</div>
+
+			<div class = "col-8" style = "margin-top: 30px; background-color: #fffefc; padding: 20px">
+
+					<h3 style = "margin-bottom: 20px;"> Create a post </h3>
+
+					<%= render 'form', forum: @forum, :style => "text-align: left;" %>
+
+
+
+			</div>
+
+			<div class = "col-2">
+			</div>
+	</div>
+
+</body>

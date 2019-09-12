@@ -1,0 +1,30 @@
+<body id = "forumbackground">
+
+		<img src= "logo.png" style = "width: 200px; margin-top:20px;"/>
+
+		<p id="notice"><%= notice %></p>
+
+		<h1></h1>
+
+		<a href="/forums/new" class="btn btn-info" role="button" aria-disabled="true" style = "margin-bottom: 20px;"> SHARE </a>
+		<p style = "margin-bottom: 20px;"> Share with us if you have a question or stories where others can benefit. </p>
+
+
+			<div class="card">
+				<% @forums.each do |forum| %>
+  				<h5 class="card-header"><%= forum.title %></h5>
+  				<div class="card-body">
+		    			<p class="card-text">
+		    				<%= forum.visual %>
+		    				<%= forum.message %>
+		    			</p>
+		    			<p id="createdby"> <%= forum.name %> </p>
+		    			<button type="button" class="btn btn-outline-danger" id = "updatebutton" style = "padding-left:60px; padding-right:60px; margin-top: 6px; margin-bottom: 6px;">
+		    				<%= link_to 'Delete Post', forum, method: :delete, data: { confirm: 'Are you sure?' } %>
+		    			</button>
+  				</div>
+  		<% end %>
+		</div>
+
+		<br>
+</body>

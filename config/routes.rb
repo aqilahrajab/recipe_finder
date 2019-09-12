@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+
+  resources :forums
+  root 'home#index'
+  resources :comments
   devise_for :users
   get 'home/index'
   resources :recipes
-  root 'home#index'
-  resources :comments
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

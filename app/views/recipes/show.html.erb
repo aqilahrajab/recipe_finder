@@ -1,4 +1,4 @@
-<body id = "showlayout">
+<body id = "showlayout" style="text-align: center;">
 
 			<div class = "container">
 
@@ -12,49 +12,69 @@
 								  	</p>
 
 								  	<div class = "row">
-							    			<h5 class="card-title" id= "showcardtitle"><%= @recipe.name %></h5>
-							    	</div>
+
+								  		<div class = "col-2">
+
+								  		</div>
 
 
-							    	<div class = "row">
-							    		<div class="col-6" id="showcard">
+								  		<div class = "col-8">
 
-								    			<img src="<%= @recipe.visual %>" class="card-img-top" alt="recipe-image" style = "width: 300px">
+								  				<p class="card-text">
+
+								  						<button type="button" class="btn btn-outline-secondary" style = "margin-bottom: 20px; margin-left: 300px;">
+											    				<%= link_to 'Edit', edit_recipe_path(@recipe) %>
+											    		</button>
+
+											    		<button type="button" class="btn btn-outline-secondary" style = "margin-bottom: 20px;">
+																	<%= link_to 'Back', recipes_path %>
+															</button>
+										   		</p>
+
+								    			<h1 class="card-title" id= "showcardtitle" style ="padding-bottom:20px;"><%= @recipe.name %></h1>
+
 
 								    			<p>
-										  			<strong>Ingredient:</strong>
-										  			<% @ingredient.each do |item|%>
-										  			<div> <%= item %> </div>
-										  			<% end %>
+									    			<img src="<%= @recipe.visual %>" class="card-img-top" alt="recipe-image" style = "width: 300px; margin-left: 260px; margin-bottom: 40px">
+									    		</p>
 
-													</p>
+									    		<div class = "recipeinfo" style = " margin-left: 200px;">
 
-													<p>
-										  			<strong>Instructions:</strong>
-										  			<% @instruction.each do |item|%>
-										  			<div> <%= item %> </div>
-										  			<% end %>
-													</p>
+									    			<div class = "row">
+									    				<div class = "col-6">
+											    			<p>
+													  			<strong>Ingredients | </strong>
+													  			<% @ingredient.each do |item|%>
+													  			<div> <%= item %> </div>
+													  			<% end %>
+																</p>
+															</div>
 
-							    		</div>
+															<div class = "col-6">
+																<p>
+													  			<strong>Instructions | </strong>
+													  			<% @instruction.each do |item|%>
+													  			<div> <%= item %> </div>
+													  			<% end %>
+																</p>
+															</div>
+														</div>
+												<div>
 
-							    		<div class="col-6">
 
-							    			<h1> comment box here </h1>
-
-							    		</div>
-							    	</div>
-
-							    		<div class = "row">
+							    		<div class = "row" style="margin-left: 40px; padding-bottom: 50px;">
 							    			<%= @recipe.preptime %> | <%= @recipe.serving_size %> | <%= @age.agerange %>
 							    		</div>
 
 							    		<div class = "row">
-											    <p class="card-text">
-											    	<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-														<%= link_to 'Back', recipes_path %>
-										   		</p>
+
 										  </div>
+									</div>
+
+									<div class =  "col-2">
+									</div>
+
+							</div>
 
 
 				</div>

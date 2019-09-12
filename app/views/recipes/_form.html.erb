@@ -1,54 +1,62 @@
-<%= form_with(model: recipe, local: true) do |form| %>
-		  <% if recipe.errors.any? %>
-		    <div id="error_explanation">
-		      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
 
-		      <ul>
-		      <% recipe.errors.full_messages.each do |message| %>
-		        <li><%= message %></li>
-		      <% end %>
-		      </ul>
-		    </div>
-		  <% end %>
+<div class = "recipeform" style = "text-align: center;">
 
-		  <div class="field">
-		    <%= form.label :name %>
-		    <%= form.text_field :name %>
-		  </div>
+		<%= form_with(model: recipe, local: true) do |form| %>
+				  <% if recipe.errors.any? %>
+				    <div id="error_explanation">
+				      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
 
-		  <div class="field">
-		    <%= form.label :ingredient %>
-		    <%= form.text_area :ingredient %>
-		  </div>
+				      <ul>
+				      <% recipe.errors.full_messages.each do |message| %>
+				        <li><%= message %></li>
+				      <% end %>
+				      </ul>
+				    </div>
+				  <% end %>
 
-		  <div class="field">
-		    <%= form.label :instructions %>
-		    <%= form.text_area :instruction %>
-		  </div>
+				  <div class="field">
+				    <%= form.label :"Recipe Name | " %>
+				    <%= form.text_field :name, :style => "padding:10px; border:none; border-bottom: solid grey 1px; background-color:#fdfbf0; width: 300px" %>
+				  </div>
 
-		  <div class="field">
-		    <%= form.label :preptime %>
-		    <%= form.text_field :preptime %>
-		  </div>
+				  <div class="field">
+				    <%= form.label :"Ingredients |", :style => "margin-bottom: 30px;" %>
+				    <%= form.text_area :ingredient, :style => "padding:30px; border:none; border: none; background-color: white; margin-top:30px; width: 305px;"%>
+				  </div>
 
-		  <div class="field">
-		    <%= form.label :serving_size %>
-		    <%= form.text_field :serving_size %>
-		  </div>
+				  <div class="field">
+				    <%= form.label :"Instructions |" %>
+				    <%= form.text_area :instruction, :style => "padding:30px; border:none; border: none; background-color: white; margin-top:30px; width: 305px;" %>
+				  </div>
 
-		  <div class="field">
-		    <%= form.label :visuals %>
-		    <%= form.text_area :visual %>
-		  </div>
+				  <div class="field">
+				    <%= form.label :"Preptime |", :style => "margin-bottom: 30px;" %>
+				    <%= form.text_field :preptime, :style => "padding:10px; border:none; border-bottom: solid grey 1px; background-color:#fdfbf0; width: 300px; margin-left: 10px; margin-left: 10px;"%>
+				  </div>
+
+				  <div class="field">
+				    <%= form.label :"Serving Size |" %>
+				    <%= form.text_field :serving_size, :style => "padding:10px; border:none; border-bottom: solid grey 1px; background-color:#fdfbf0; width: 300px; margin-left: 10px;"%>
+				  </div>
+
+				  <div class="field">
+				    <%= form.label :"Visuals |" %>
+				    <%= form.text_area :visual, :style => "padding:10px; border:none; border-bottom: solid grey 1px; background-color:#fdfbf0; width: 300px; margin-left: 30px; margin-top: 20px;" %>
+				  </div>
 
 
-		  <div class="field">
+				  <div class="field2" style = "text-align: center;">
 
-		  	<%= form.collection_select :agerange_id, @agerange, :id, :agerange %>
-		  </div>
+				  	<%= form.collection_select :agerange_id, @agerange, :id, :agerange, :style => "margin-top:20px; text-align: center;"%>
+				  </div>
 
-		  <div class="actions">
-		    <%= form.submit %>
-		  </div>
+				  <div class ="submit" style = "margin-top: 20px;">
+				    <%= form.submit %>
+				  </div>
+
+
+				 </div>
+
+</div>
 
 <% end %>

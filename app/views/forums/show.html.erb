@@ -1,0 +1,39 @@
+
+<body id = "forumbackground">
+
+	<div class = "showforumcontent" style ="margin-top: 160px; background-color: #ecf3ee; padding: 50px;">
+
+		<p id="notice"><%= notice %></p>
+
+				<p>
+				  <strong>Name:</strong>
+				  <%= @forum.title %>
+				</p>
+
+				<p>
+				  <%= @forum.visual %>
+				</p>
+
+				<p>
+				  <strong>Name:</strong>
+				  <%= @forum.name %>
+				</p>
+
+				<p>
+				  <strong>Message:</strong>
+				  <%= @forum.message %>
+				</p>
+
+
+
+
+					<button type="button" class="btn btn-outline-secondary" style = "margin-top: 40px;">
+						<%= link_to 'Edit', edit_forum_path(@forum) %>
+					</button>
+
+					<button type="button" class="btn btn-outline-secondary" style = "margin-top: 40px;">
+						<%= link_to 'Back', forums_path %>
+					</button>
+			</div>
+
+</body>

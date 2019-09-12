@@ -39,8 +39,6 @@ class RecipesController < ApplicationController
       recipeNumIns = Recipe.find(params[:id]).instruction
       @instruction = recipeNumIns.split(".");
 
-
-
   end
 
   # GET /recipes/new

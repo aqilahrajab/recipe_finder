@@ -19,7 +19,11 @@
 							<div>
 										<%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
 									  <%= text_field_tag :search, params[:search], placeholder: "Search for Recipes" %> <br/>
-									  <%= submit_tag "Search", :name => nil %>
+
+									  <button type="button" class="btn btn-warning" style="margin-top: 10px;">
+									  <%= submit_tag "Search", :name => nil, :style => " background-color: transparent; border: none;" %>
+										</button>
+
 									  <% end %>
 							</div>
 
@@ -115,7 +119,8 @@
 				<div class="col-9">
 
 					<div class ="row" id="logo">
-							<img src= "logo.png" style = "width: 200px"/>
+							<img src= "logo.png" style = "width: 200px"/><br/>
+							<a href="/forums" class="btn btn-info" role="button" aria-disabled="true"> Meet other Parents! </a>
 							<p id="notice"><%= notice %></p>
 
 					</div>
@@ -129,11 +134,24 @@
 											  		</div>
 											  		<div class="card-body">
 
-												    	<h5 class="card-title"> <%= recipe.name %> </h5>
-												    	<h5> <%= recipe.agerange.agerange %> </h5>
-												    	<%= link_to 'Show', recipe %>
-												    	<%= link_to 'Edit', edit_recipe_path(recipe) %>
-												    	<%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+												    	<h5 class="card-title" style = "text-align: center"> <%= recipe.name %></h5>
+
+													    <div class ="agerange" style="background-color: #e9f0f0; padding-top: 15px; padding-left: 30px; padding-bottom: 10px; padding-right: 30px; text-align: center">
+													    		<h6> <%= recipe.agerange.agerange %> </h6>
+													    </div>
+
+												    	<button type="button" class="btn btn-outline-info" id = "updatebutton" style = "padding-left:52px; padding-right:52px; margin-top: 6px; margin-bottom: 6px;">
+												    			<%= link_to 'View Full Recipe', recipe %>
+												    	</button><br/>
+
+												    	<button type="button" class="btn btn-outline-warning" id = "updatebutton"style = "padding-left:57px; padding-right:57px; margin-top: 6px; margin-bottom: 6px;">
+												    			<%= link_to 'Update Recipe', edit_recipe_path(recipe) %>
+												    	</button><br/>
+
+												    	<button type="button" class="btn btn-outline-danger" id = "updatebutton" style = "padding-left:60px; padding-right:60px; margin-top: 6px; margin-bottom: 6px;">
+												    			<%= link_to 'Delete Recipe', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+												    	</button><br/>
+
 												    </div>
 												  </div>
 										  	</div>

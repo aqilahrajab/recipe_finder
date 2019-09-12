@@ -1,0 +1,38 @@
+<%= form_with(model: forum, local: true) do |form| %>
+  <% if forum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(forum.errors.count, "error") %> prohibited this forum from being saved:</h2>
+
+      <ul>
+      <% forum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <div class="field">
+		    <%= form.label :title %>
+		    <%= form.text_area :title, :style => "padding:10px; border:none; border-bottom: solid grey 1px; background-color:#fffefc; width: 300px"%>
+	 </div>
+
+   <div class="field">
+		    <%= form.label :visual %>
+		    <%= form.text_area :visual, :style => "padding:10px; border:none; border-bottom: solid grey 1px; background-color:#fffefc; width: 300px"%>
+	 </div>
+
+  <div class="field">
+    	<%= form.label :message %>
+    	<%= form.text_area :message, :style => "padding:30px; border:none; border: none; background-color: #ecf3ee; margin-top:30px; width: 305px;" %>
+  </div>
+
+   <div class="field">
+    	<%= form.label :name %>
+    	<%= form.text_field :name, :style => "padding:10px; border:none; border-bottom: solid grey 1px; background-color:#fffefc; width: 300px" %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
