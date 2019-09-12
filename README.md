@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Explanations of the technologies used
 
-Things you may want to cover:
+Ruby on rails
 
-* Ruby version
+A couple paragraphs about the general approach you took
 
-* System dependencies
+First we started with the problem statement, and ensure that each on the compoenents met the user's needs. 
+Created a worefram, planned the routes 
 
-* Configuration
+Installation instructions for any dependencies.
 
-* Database creation
+Bootstrap 
+Devise
 
-* Database initialization
+Link to your user stories – who are your users, what do they want, and why?
 
-* How to run the test suite
+The users are mainly caretakers for younger children, to help guide young and experienced mother to help them deliever nutritious meal for their infants. 
 
-* Services (job queues, cache servers, search engines, etc.)
+Link to your wireframes – sketches of major views / interfaces in your application Hirer/Job-posting wireframes: 
 
-* Deployment instructions
-
-* ...
+Other features:
+-Ability to like, share and reply to recipes and at the forum platform
+- More recipes and see how this can expand to either gamification to encourage children to eat healthy
